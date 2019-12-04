@@ -3,10 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BC941C2F1451563BFE6B763 /* Pods_SocialEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91242503377D601E8C2B09D7 /* Pods_SocialEats.framework */; };
+		C20BADBB23746B3500D9A9AD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BADBA23746B3500D9A9AD /* CreateAccountView.swift */; };
+		C20BADBD23746B4300D9A9AD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BADBC23746B4300D9A9AD /* LoginView.swift */; };
+		C20BADBF23771B4C00D9A9AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C20BADBE23771B4C00D9A9AD /* GoogleService-Info.plist */; };
+		C23226F52389FE3000E87AA5 /* MealsOnProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23226F42389FE3000E87AA5 /* MealsOnProfile.swift */; };
+		C23AFD3423884EBE00A63056 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD3323884EBE00A63056 /* Search.swift */; };
+		C23AFD392388513500A63056 /* BreakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD382388513500A63056 /* BreakfastView.swift */; };
+		C23AFD3B2388532300A63056 /* BrunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD3A2388532300A63056 /* BrunchView.swift */; };
+		C23AFD3D2388543A00A63056 /* LunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD3C2388543A00A63056 /* LunchView.swift */; };
+		C23AFD3F2388544600A63056 /* DinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD3E2388544600A63056 /* DinnerView.swift */; };
+		C23AFD412388545500A63056 /* DesertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD402388545500A63056 /* DesertView.swift */; };
+		C23AFD432388546100A63056 /* SnackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD422388546100A63056 /* SnackView.swift */; };
+		C23AFD452388546B00A63056 /* DrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD442388546B00A63056 /* DrinkView.swift */; };
+		C23AFD472388569A00A63056 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD462388569A00A63056 /* Home.swift */; };
+		C23AFD4A2388577000A63056 /* DescriptionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD492388577000A63056 /* DescriptionText.swift */; };
+		C23AFD4C2388579B00A63056 /* IngredientsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD4B2388579B00A63056 /* IngredientsText.swift */; };
+		C23AFD4E238857D600A63056 /* BreakfastTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD4D238857D600A63056 /* BreakfastTitle.swift */; };
+		C23AFD502388581400A63056 /* BrunchTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD4F2388581400A63056 /* BrunchTitle.swift */; };
+		C23AFD522388582000A63056 /* LunchTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD512388582000A63056 /* LunchTitle.swift */; };
+		C23AFD542388582C00A63056 /* DinnerTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD532388582C00A63056 /* DinnerTitle.swift */; };
+		C23AFD562388583A00A63056 /* SnackTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD552388583A00A63056 /* SnackTitle.swift */; };
+		C23AFD582388585300A63056 /* DesertTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD572388585300A63056 /* DesertTitle.swift */; };
+		C23AFD5A2388587300A63056 /* DrinkTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD592388587300A63056 /* DrinkTitle.swift */; };
+		C23AFD5C2388588500A63056 /* FireButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD5B2388588500A63056 /* FireButton.swift */; };
+		C23AFD5E2388589300A63056 /* CommentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD5D2388589300A63056 /* CommentButton.swift */; };
+		C23AFD60238858A400A63056 /* UsernameText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AFD5F238858A400A63056 /* UsernameText.swift */; };
+		C23F13D3238428EA009F60C4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F13D2238428EA009F60C4 /* Profile.swift */; };
+		C243A002237C7FD500BB8129 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243A001237C7FD500BB8129 /* Drink.swift */; };
+		C243A004237C7FE200BB8129 /* Desert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243A003237C7FE200BB8129 /* Desert.swift */; };
+		C243A006237C7FEA00BB8129 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243A005237C7FEA00BB8129 /* Snack.swift */; };
+		C243A008237C801000BB8129 /* Breakfast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243A007237C801000BB8129 /* Breakfast.swift */; };
+		C243A00A237C801B00BB8129 /* Brunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243A009237C801B00BB8129 /* Brunch.swift */; };
+		C243A00C237C802400BB8129 /* Lunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243A00B237C802400BB8129 /* Lunch.swift */; };
+		C243A00E237C802D00BB8129 /* Dinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243A00D237C802D00BB8129 /* Dinner.swift */; };
+		C2611C392390E0B600785520 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2611C382390E0B600785520 /* SessionStore.swift */; };
 		C26132822371001400E0AC81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26132812371001400E0AC81 /* AppDelegate.swift */; };
 		C26132842371001400E0AC81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26132832371001400E0AC81 /* SceneDelegate.swift */; };
 		C26132872371001400E0AC81 /* SocialEats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26132852371001400E0AC81 /* SocialEats.xcdatamodeld */; };
@@ -14,9 +49,51 @@
 		C261328B2371001800E0AC81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C261328A2371001800E0AC81 /* Assets.xcassets */; };
 		C261328E2371001800E0AC81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C261328D2371001800E0AC81 /* Preview Assets.xcassets */; };
 		C26132912371001800E0AC81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C261328F2371001800E0AC81 /* LaunchScreen.storyboard */; };
+		C261329A23710B0700E0AC81 /* LoginOrSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C261329923710B0700E0AC81 /* LoginOrSignUp.swift */; };
+		C2942D65237BA9750095DA16 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2942D64237BA9750095DA16 /* TimeLineView.swift */; };
+		C2BD5C282384E3D800E59748 /* PostMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BD5C272384E3D800E59748 /* PostMeal.swift */; };
+		C2BD5C2B2384E66100E59748 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BD5C2A2384E66100E59748 /* User.swift */; };
+		C2DEA0A7238C28EC00D933AC /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0A6238C28EC00D933AC /* UserStore.swift */; };
+		C2DEA0A9238C291D00D933AC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DEA0A8238C291D00D933AC /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72864CE7D3706472F69E4377 /* Pods-SocialEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEats.release.xcconfig"; path = "Target Support Files/Pods-SocialEats/Pods-SocialEats.release.xcconfig"; sourceTree = "<group>"; };
+		91242503377D601E8C2B09D7 /* Pods_SocialEats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialEats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C20BADBA23746B3500D9A9AD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		C20BADBC23746B4300D9A9AD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C20BADBE23771B4C00D9A9AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C23226F42389FE3000E87AA5 /* MealsOnProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsOnProfile.swift; sourceTree = SOURCE_ROOT; };
+		C23AFD3323884EBE00A63056 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = SOURCE_ROOT; };
+		C23AFD382388513500A63056 /* BreakfastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastView.swift; sourceTree = "<group>"; };
+		C23AFD3A2388532300A63056 /* BrunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrunchView.swift; sourceTree = "<group>"; };
+		C23AFD3C2388543A00A63056 /* LunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchView.swift; sourceTree = "<group>"; };
+		C23AFD3E2388544600A63056 /* DinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinnerView.swift; sourceTree = "<group>"; };
+		C23AFD402388545500A63056 /* DesertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesertView.swift; sourceTree = "<group>"; };
+		C23AFD422388546100A63056 /* SnackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackView.swift; sourceTree = "<group>"; };
+		C23AFD442388546B00A63056 /* DrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkView.swift; sourceTree = "<group>"; };
+		C23AFD462388569A00A63056 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = SOURCE_ROOT; };
+		C23AFD492388577000A63056 /* DescriptionText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DescriptionText.swift; path = SocialEats/DescriptionText.swift; sourceTree = SOURCE_ROOT; };
+		C23AFD4B2388579B00A63056 /* IngredientsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsText.swift; sourceTree = "<group>"; };
+		C23AFD4D238857D600A63056 /* BreakfastTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastTitle.swift; sourceTree = "<group>"; };
+		C23AFD4F2388581400A63056 /* BrunchTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrunchTitle.swift; sourceTree = "<group>"; };
+		C23AFD512388582000A63056 /* LunchTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTitle.swift; sourceTree = "<group>"; };
+		C23AFD532388582C00A63056 /* DinnerTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinnerTitle.swift; sourceTree = "<group>"; };
+		C23AFD552388583A00A63056 /* SnackTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackTitle.swift; sourceTree = "<group>"; };
+		C23AFD572388585300A63056 /* DesertTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesertTitle.swift; sourceTree = "<group>"; };
+		C23AFD592388587300A63056 /* DrinkTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinkTitle.swift; path = SocialEats/DrinkTitle.swift; sourceTree = SOURCE_ROOT; };
+		C23AFD5B2388588500A63056 /* FireButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireButton.swift; sourceTree = "<group>"; };
+		C23AFD5D2388589300A63056 /* CommentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentButton.swift; sourceTree = "<group>"; };
+		C23AFD5F238858A400A63056 /* UsernameText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameText.swift; sourceTree = "<group>"; };
+		C23F13D2238428EA009F60C4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = SOURCE_ROOT; };
+		C243A001237C7FD500BB8129 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = SOURCE_ROOT; };
+		C243A003237C7FE200BB8129 /* Desert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desert.swift; sourceTree = "<group>"; };
+		C243A005237C7FEA00BB8129 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
+		C243A007237C801000BB8129 /* Breakfast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breakfast.swift; sourceTree = "<group>"; };
+		C243A009237C801B00BB8129 /* Brunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brunch.swift; sourceTree = "<group>"; };
+		C243A00B237C802400BB8129 /* Lunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunch.swift; sourceTree = "<group>"; };
+		C243A00D237C802D00BB8129 /* Dinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dinner.swift; sourceTree = "<group>"; };
+		C2611C382390E0B600785520 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		C261327E2371001400E0AC81 /* SocialEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26132812371001400E0AC81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C26132832371001400E0AC81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +103,13 @@
 		C261328D2371001800E0AC81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C26132902371001800E0AC81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C26132922371001800E0AC81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C261329923710B0700E0AC81 /* LoginOrSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUp.swift; sourceTree = "<group>"; };
+		C2942D64237BA9750095DA16 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
+		C2BD5C272384E3D800E59748 /* PostMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMeal.swift; sourceTree = "<group>"; };
+		C2BD5C2A2384E66100E59748 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2DEA0A6238C28EC00D933AC /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = SocialEats/UserStore.swift; sourceTree = SOURCE_ROOT; };
+		C2DEA0A8238C291D00D933AC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D8ACD232FD1FBEA9385C868E /* Pods-SocialEats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialEats.debug.xcconfig"; path = "Target Support Files/Pods-SocialEats/Pods-SocialEats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +117,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC941C2F1451563BFE6B763 /* Pods_SocialEats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2279272A9DD902532A423236 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8ACD232FD1FBEA9385C868E /* Pods-SocialEats.debug.xcconfig */,
+				72864CE7D3706472F69E4377 /* Pods-SocialEats.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C23AFD3523884EED00A63056 /* MealViews */ = {
+			isa = PBXGroup;
+			children = (
+				C23AFD382388513500A63056 /* BreakfastView.swift */,
+				C23AFD3A2388532300A63056 /* BrunchView.swift */,
+				C23AFD3C2388543A00A63056 /* LunchView.swift */,
+				C23AFD3E2388544600A63056 /* DinnerView.swift */,
+				C23AFD402388545500A63056 /* DesertView.swift */,
+				C23AFD422388546100A63056 /* SnackView.swift */,
+				C23AFD442388546B00A63056 /* DrinkView.swift */,
+			);
+			path = MealViews;
+			sourceTree = "<group>";
+		};
+		C23AFD482388574500A63056 /* DetailsOfViews */ = {
+			isa = PBXGroup;
+			children = (
+				C23AFD492388577000A63056 /* DescriptionText.swift */,
+				C23AFD4B2388579B00A63056 /* IngredientsText.swift */,
+				C23AFD4D238857D600A63056 /* BreakfastTitle.swift */,
+				C23AFD572388585300A63056 /* DesertTitle.swift */,
+				C23AFD4F2388581400A63056 /* BrunchTitle.swift */,
+				C23AFD512388582000A63056 /* LunchTitle.swift */,
+				C23AFD532388582C00A63056 /* DinnerTitle.swift */,
+				C23AFD552388583A00A63056 /* SnackTitle.swift */,
+				C23AFD592388587300A63056 /* DrinkTitle.swift */,
+				C23AFD5B2388588500A63056 /* FireButton.swift */,
+				C23AFD5D2388589300A63056 /* CommentButton.swift */,
+				C23AFD5F238858A400A63056 /* UsernameText.swift */,
+			);
+			path = DetailsOfViews;
+			sourceTree = "<group>";
+		};
+		C243A000237C7FB400BB8129 /* FoodTypes */ = {
+			isa = PBXGroup;
+			children = (
+				C243A001237C7FD500BB8129 /* Drink.swift */,
+				C243A003237C7FE200BB8129 /* Desert.swift */,
+				C243A005237C7FEA00BB8129 /* Snack.swift */,
+				C243A007237C801000BB8129 /* Breakfast.swift */,
+				C243A009237C801B00BB8129 /* Brunch.swift */,
+				C243A00B237C802400BB8129 /* Lunch.swift */,
+				C243A00D237C802D00BB8129 /* Dinner.swift */,
+			);
+			path = FoodTypes;
+			sourceTree = "<group>";
+		};
 		C26132752371001400E0AC81 = {
 			isa = PBXGroup;
 			children = (
 				C26132802371001400E0AC81 /* SocialEats */,
 				C261327F2371001400E0AC81 /* Products */,
+				2279272A9DD902532A423236 /* Pods */,
+				F79CE3D996EEE85090CB22F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +201,12 @@
 		C26132802371001400E0AC81 /* SocialEats */ = {
 			isa = PBXGroup;
 			children = (
+				C23AFD482388574500A63056 /* DetailsOfViews */,
+				C23AFD3523884EED00A63056 /* MealViews */,
+				C2BD5C292384E64300E59748 /* Models */,
+				C243A000237C7FB400BB8129 /* FoodTypes */,
+				C2942D63237BA9490095DA16 /* MainViews */,
+				C26132982371012000E0AC81 /* LogIn */,
 				C26132812371001400E0AC81 /* AppDelegate.swift */,
 				C26132832371001400E0AC81 /* SceneDelegate.swift */,
 				C26132882371001400E0AC81 /* ContentView.swift */,
@@ -78,6 +227,49 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C26132982371012000E0AC81 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				C20BADBE23771B4C00D9A9AD /* GoogleService-Info.plist */,
+				C261329923710B0700E0AC81 /* LoginOrSignUp.swift */,
+				C20BADBA23746B3500D9A9AD /* CreateAccountView.swift */,
+				C20BADBC23746B4300D9A9AD /* LoginView.swift */,
+				C2DEA0A6238C28EC00D933AC /* UserStore.swift */,
+				C2DEA0A8238C291D00D933AC /* UserModel.swift */,
+				C2611C382390E0B600785520 /* SessionStore.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		C2942D63237BA9490095DA16 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				C2942D64237BA9750095DA16 /* TimeLineView.swift */,
+				C23F13D2238428EA009F60C4 /* Profile.swift */,
+				C23AFD3323884EBE00A63056 /* Search.swift */,
+				C23AFD462388569A00A63056 /* Home.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		C2BD5C292384E64300E59748 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2BD5C272384E3D800E59748 /* PostMeal.swift */,
+				C2BD5C2A2384E66100E59748 /* User.swift */,
+				C23226F42389FE3000E87AA5 /* MealsOnProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F79CE3D996EEE85090CB22F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91242503377D601E8C2B09D7 /* Pods_SocialEats.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C26132952371001800E0AC81 /* Build configuration list for PBXNativeTarget "SocialEats" */;
 			buildPhases = (
+				5541C25344D899F3E087AA4F /* [CP] Check Pods Manifest.lock */,
 				C261327A2371001400E0AC81 /* Sources */,
 				C261327B2371001400E0AC81 /* Frameworks */,
 				C261327C2371001400E0AC81 /* Resources */,
+				C7E9392788F0A4B8115FDDC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20BADBF23771B4C00D9A9AD /* GoogleService-Info.plist in Resources */,
 				C26132912371001800E0AC81 /* LaunchScreen.storyboard in Resources */,
 				C261328E2371001800E0AC81 /* Preview Assets.xcassets in Resources */,
 				C261328B2371001800E0AC81 /* Assets.xcassets in Resources */,
@@ -144,15 +339,96 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5541C25344D899F3E087AA4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialEats-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7E9392788F0A4B8115FDDC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialEats/Pods-SocialEats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialEats/Pods-SocialEats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialEats/Pods-SocialEats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C261327A2371001400E0AC81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C243A00E237C802D00BB8129 /* Dinner.swift in Sources */,
+				C23AFD582388585300A63056 /* DesertTitle.swift in Sources */,
+				C23AFD4C2388579B00A63056 /* IngredientsText.swift in Sources */,
+				C243A004237C7FE200BB8129 /* Desert.swift in Sources */,
+				C23AFD4A2388577000A63056 /* DescriptionText.swift in Sources */,
+				C23AFD542388582C00A63056 /* DinnerTitle.swift in Sources */,
+				C23AFD3D2388543A00A63056 /* LunchView.swift in Sources */,
+				C20BADBB23746B3500D9A9AD /* CreateAccountView.swift in Sources */,
+				C243A002237C7FD500BB8129 /* Drink.swift in Sources */,
+				C23AFD5C2388588500A63056 /* FireButton.swift in Sources */,
+				C23AFD60238858A400A63056 /* UsernameText.swift in Sources */,
+				C20BADBD23746B4300D9A9AD /* LoginView.swift in Sources */,
+				C23AFD472388569A00A63056 /* Home.swift in Sources */,
+				C23AFD452388546B00A63056 /* DrinkView.swift in Sources */,
+				C23AFD3F2388544600A63056 /* DinnerView.swift in Sources */,
+				C2BD5C282384E3D800E59748 /* PostMeal.swift in Sources */,
 				C26132822371001400E0AC81 /* AppDelegate.swift in Sources */,
+				C243A008237C801000BB8129 /* Breakfast.swift in Sources */,
+				C243A006237C7FEA00BB8129 /* Snack.swift in Sources */,
+				C23AFD522388582000A63056 /* LunchTitle.swift in Sources */,
+				C23F13D3238428EA009F60C4 /* Profile.swift in Sources */,
+				C23AFD502388581400A63056 /* BrunchTitle.swift in Sources */,
+				C23226F52389FE3000E87AA5 /* MealsOnProfile.swift in Sources */,
+				C23AFD5E2388589300A63056 /* CommentButton.swift in Sources */,
 				C26132872371001400E0AC81 /* SocialEats.xcdatamodeld in Sources */,
 				C26132892371001400E0AC81 /* ContentView.swift in Sources */,
+				C23AFD3423884EBE00A63056 /* Search.swift in Sources */,
+				C243A00A237C801B00BB8129 /* Brunch.swift in Sources */,
+				C243A00C237C802400BB8129 /* Lunch.swift in Sources */,
+				C261329A23710B0700E0AC81 /* LoginOrSignUp.swift in Sources */,
 				C26132842371001400E0AC81 /* SceneDelegate.swift in Sources */,
+				C23AFD432388546100A63056 /* SnackView.swift in Sources */,
+				C2942D65237BA9750095DA16 /* TimeLineView.swift in Sources */,
+				C23AFD562388583A00A63056 /* SnackTitle.swift in Sources */,
+				C23AFD3B2388532300A63056 /* BrunchView.swift in Sources */,
+				C23AFD412388545500A63056 /* DesertView.swift in Sources */,
+				C2DEA0A9238C291D00D933AC /* UserModel.swift in Sources */,
+				C2DEA0A7238C28EC00D933AC /* UserStore.swift in Sources */,
+				C23AFD5A2388587300A63056 /* DrinkTitle.swift in Sources */,
+				C2BD5C2B2384E66100E59748 /* User.swift in Sources */,
+				C23AFD392388513500A63056 /* BreakfastView.swift in Sources */,
+				C23AFD4E238857D600A63056 /* BreakfastTitle.swift in Sources */,
+				C2611C392390E0B600785520 /* SessionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +562,7 @@
 		};
 		C26132962371001800E0AC81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8ACD232FD1FBEA9385C868E /* Pods-SocialEats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +583,7 @@
 		};
 		C26132972371001800E0AC81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72864CE7D3706472F69E4377 /* Pods-SocialEats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
