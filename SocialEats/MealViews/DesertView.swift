@@ -9,14 +9,14 @@
 import SwiftUI
 
  struct DesertView: View {
+    @State var data = DataManager()
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
 
-                ForEach(0..<5) {_ in
-
-                    DesertCard(profilePic: "profilePicture", imName: "desert")
-                }
+                ForEach(data.meals){ meal in
+                        DesertCard(mealToDisplay: meal)
+                    }
             }
         }
     }
@@ -29,6 +29,8 @@ struct DesertView_Previews: PreviewProvider {
 
 
 struct DesertCard: View {
+    var mealToDisplay: MealPost
+
    var profilePic = ""
    var imName = ""
    var body: some View {
@@ -36,11 +38,11 @@ struct DesertCard: View {
         VStack {
                   HStack(alignment: .top) {
                   Image(profilePic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
-                     UsernameText()
+                    UsernameText(textToDisplay: mealToDisplay.id)
                      Spacer()
-                     DescriptionText()
+                    DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                   }
-                  Image(imName).resizable().frame(width: 320, height: 215).cornerRadius(11)
+                  Image(mealToDisplay.url).resizable().frame(width: 320, height: 215).cornerRadius(11)
                   
                   HStack {
                       FireButton()
@@ -49,7 +51,7 @@ struct DesertCard: View {
                   }
                   
                   HStack {
-                      IngredientsText().padding(.leading, 6.0)
+                    IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
                       Spacer()
                   }
               }
@@ -60,6 +62,8 @@ struct DesertCard: View {
 
 
 struct BigDesertCard: View {
+    var mealToDisplay: MealPost
+
       var profilePic = ""
       var imName = ""
       var id = ""
@@ -68,12 +72,12 @@ struct BigDesertCard: View {
            VStack {
                    HStack {
                    Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
-                       UsernameText()
+                    UsernameText(textToDisplay: mealToDisplay.id)
                        Spacer()
-                       DescriptionText()
+                    DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                    }
                        .padding(.leading, 9.0)
-                       Image(imName).resizable().frame(height: 375).cornerRadius(3)
+                       Image(mealToDisplay.url).resizable().frame(height: 375).cornerRadius(3)
                         
                    HStack {
                        FireButton()
@@ -81,7 +85,7 @@ struct BigDesertCard: View {
                        Spacer()
                    }
                    HStack {
-                       IngredientsText() .padding(.leading, 6.0)
+                    IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
                        Spacer()
                        }.padding(.bottom, 30)
                    }
@@ -90,14 +94,14 @@ struct BigDesertCard: View {
   }
   
   struct BigDesertView: View {
+    @State var data = DataManager()
                 var body: some View {
                 
                     ScrollView(.vertical, showsIndicators: false) {
                        
-
-               ForEach(0..<5) {_ in
-               BigDesertCard(profilePic: "profilePicture", imName: "desert", id: "")
-                         }
+                        ForEach(data.meals){ meal in
+                    BigDesertCard(mealToDisplay: meal)
+                        }
                     }
                 }
             }
@@ -126,12 +130,7 @@ struct SeeAllDesert: View {
                ScrollView(.vertical, showsIndicators: false) {
                   
                   VStack {
-                      
-                      ForEach(0..<5) {_ in
-                                  
                       BigDesertView()
-                      }
-                      
                   }
               }
           }.navigationBarTitle("All Desert Posts")

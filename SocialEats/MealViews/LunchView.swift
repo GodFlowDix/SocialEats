@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct LunchView: View {
+    @State var data = DataManager()
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-
-                ForEach(0..<5) {_ in
-
-                    LunchCard(profilePic: "profilePicture", imName: "lunch")
+                ForEach(data.meals){ meal in
+                    LunchCard(mealToDisplay: meal)
                 }
             }
         }
@@ -29,6 +29,8 @@ struct LunchView_Previews: PreviewProvider {
 }
 
 struct LunchCard: View {
+    var mealToDisplay: MealPost
+
  var profilePic = ""
  var imName = ""
  var body: some View {
@@ -37,14 +39,11 @@ struct LunchCard: View {
          HStack(alignment: .top) {
              Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
                         //Spacer()
-             Text("Username")
-             .font(.body)
-             .fontWeight(.thin)
-             .foregroundColor(Color("universalOrange"))
+            UsernameText(textToDisplay: mealToDisplay.id)
                         Spacer()
-             DescriptionText()
+            DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                     }
-         Image(imName).resizable().frame(width: 320, height: 215).cornerRadius(11)
+         Image(mealToDisplay.url).resizable().frame(width: 320, height: 215).cornerRadius(11)
         
          HStack {
              FireButton()
@@ -53,7 +52,7 @@ struct LunchCard: View {
          }
                    
          HStack {
-             IngredientsText().padding(.leading, 6.0)
+            IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
              Spacer()
              }
          }
@@ -63,6 +62,7 @@ struct LunchCard: View {
 
 
  struct BigLunchCard: View {
+     var mealToDisplay: MealPost
          var profilePic = ""
          var imName = ""
          var id = ""
@@ -71,12 +71,12 @@ struct LunchCard: View {
              VStack {
                         HStack {
                     Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
-                        UsernameText()
+                            UsernameText(textToDisplay: mealToDisplay.id)
                         Spacer()
-                        DescriptionText()
+                            DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                     }
                     .padding(.leading, 9.0)
-                    Image(imName).resizable().frame(height: 375).cornerRadius(3)
+                    Image(mealToDisplay.url).resizable().frame(height: 375).cornerRadius(3)
                         
                 HStack {
                     FireButton()
@@ -84,7 +84,7 @@ struct LunchCard: View {
                     Spacer()
                 }
                 HStack {
-                    IngredientsText() .padding(.leading, 6.0)
+                    IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
                     Spacer()
                 }.padding(.bottom, 30)
             }
@@ -93,16 +93,21 @@ struct LunchCard: View {
 }
 
 struct BigLunchView: View {
+    @State var data = DataManager()
+
           var body: some View {
           
               ScrollView(.vertical, showsIndicators: false) {
                  
+                ForEach(data.meals){ meal in
+                        BigLunchCard(mealToDisplay: meal)
+                    }
 
-                      ForEach(0..<5) {_ in
-                       BigLunchCard(profilePic: "profilePicture", imName: "lunch", id: "")
-                      
-                      
-                   }
+//                      ForEach(0..<5) {_ in
+//                       BigLunchCard(profilePic: "profilePicture", imName: "lunch", id: "")
+//
+//
+//                   }
               }
           }
       }
@@ -137,12 +142,7 @@ struct SeeAllLunch: View {
                  ScrollView(.vertical, showsIndicators: false) {
                     
                     VStack {
-                        
-                        ForEach(0..<5) {_ in
-                                    
                         BigLunchView()
-                        }
-                        
                     }
                 }
             }.navigationBarTitle("All Lunch Posts")

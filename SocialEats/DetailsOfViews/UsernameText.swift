@@ -10,10 +10,11 @@ import SwiftUI
 import Firebase
 
 struct UsernameText: View {
+     var textToDisplay:String
    // @ObservedObject var userStore = UserStore()
    var body: some View {
     
-    Text("username")
+    Text(textToDisplay)
         .font(.subheadline)
         .fontWeight(.regular)
         .foregroundColor(Color("universalOrange"))
@@ -33,6 +34,6 @@ struct UsernameText: View {
 
 struct UsernameText_Previews: PreviewProvider {
     static var previews: some View {
-        UsernameText()
+        UsernameText(textToDisplay: "username text!!!!")
     }
 }

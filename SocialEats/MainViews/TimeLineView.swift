@@ -48,6 +48,7 @@ struct TimeLineView: View {
         } .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.top)
+            .accentColor(universalOrange)
     }
 }
 

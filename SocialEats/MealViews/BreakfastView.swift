@@ -9,16 +9,14 @@
 import SwiftUI
 
 struct BreakfastView: View {
-    var body: some View {
     
-        
+    @State var data = DataManager()
+    
+    var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-
-                ForEach(0..<5) {_ in
-                    BreakfastCard(profilePic: "profilePicture", imName: "breakfast", id: "")
-                
-                
+                ForEach(data.meals){ meal in
+                    BreakfastCard(mealToDisplay: meal)
                 }
             }
         }
@@ -35,19 +33,18 @@ struct BreakfastView_Previews: PreviewProvider {
 }
 
 struct BreakfastCard: View {
-    var profilePic = ""
-    var imName = ""
-    var id = ""
+    var mealToDisplay: MealPost
+    
     var body: some View {
         
         VStack {
             HStack(alignment: .top) {
-            Image(profilePic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
-               UsernameText()
+                Image(mealToDisplay.pic).resizable().clipShape(Circle()).frame(width: CGFloat(30.0), height: CGFloat(30.0))
+                UsernameText(textToDisplay: mealToDisplay.id)
                Spacer()
-               DescriptionText()
+                DescriptionText(textToDisplay: mealToDisplay.mealDetails)
             }
-            Image(imName).resizable().frame(width: 320, height: 215).cornerRadius(11)
+            Image(mealToDisplay.url).resizable().frame(width: 320, height: 215).cornerRadius(11)
             
             HStack {
                 FireButton()
@@ -56,7 +53,7 @@ struct BreakfastCard: View {
             }
             
             HStack {
-                IngredientsText().padding(.leading, 6.0)
+                IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
                 Spacer()
             }
         }
@@ -65,6 +62,8 @@ struct BreakfastCard: View {
 }
 
  struct BigBreakfastCard: View {
+    var mealToDisplay: MealPost
+
     var profilePic = ""
     var imName = ""
     var id = ""
@@ -73,12 +72,12 @@ struct BreakfastCard: View {
         VStack {
                   HStack {
              Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
-                    UsernameText()
+                    UsernameText(textToDisplay: mealToDisplay.id)
                       Spacer()
-                    DescriptionText()
+                    DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                   }
                   .padding(.leading, 9.0)
-                Image(imName).resizable().frame(height: 375).cornerRadius(3)
+                Image(mealToDisplay.url).resizable().frame(height: 375).cornerRadius(3)
             
             HStack {
                 FireButton()
@@ -87,7 +86,7 @@ struct BreakfastCard: View {
                 }
             HStack {
                 
-            IngredientsText()
+                IngredientsText(textToDisplay: mealToDisplay.ingredients)
                 .padding(.leading, 6.0)
                 
                 Spacer()
@@ -98,16 +97,15 @@ struct BreakfastCard: View {
 }
 
 struct BigBreakfastView: View {
+    @State var data = DataManager()
     var body: some View {
     
         ScrollView(.vertical, showsIndicators: false) {
            
+            ForEach(data.meals){ meal in
+                BreakfastCard(mealToDisplay: meal)
+            }
 
-                ForEach(0..<5) {_ in
-                 BigBreakfastCard(profilePic: "profilePicture", imName: "breakfast", id: "")
-                
-                
-             }
         }
     }
 }
@@ -134,12 +132,7 @@ struct SeeAllBreakfast: View {
              ScrollView(.vertical, showsIndicators: false) {
                 
                 VStack {
-                    
-                    ForEach(0..<5) {_ in
-                                
                     BigBreakfastView()
-                    }
-                    
                 }
             }
         }.navigationBarTitle("All Breakfast Posts")

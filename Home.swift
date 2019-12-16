@@ -10,9 +10,12 @@ import SwiftUI
 import Firebase
 
 struct Home: View {
+  //  @ObservedObject var observedData = getData()
     // @State var isNavigationBarHidden: Bool = true
     @State var show = false
     @State var showModalView = false
+    
+    
    var body: some View {
        NavigationView {
           // ZStack {
@@ -33,9 +36,7 @@ struct Home: View {
                        }.padding(.top, 25)
                        ScrollView(.horizontal, showsIndicators: false) {
                        HStack {
-                           ForEach(0..<5) {_ in
-                               BreakfastView()
-                           }
+                           BreakfastView()
                        }
                    }
                     
@@ -53,10 +54,10 @@ struct Home: View {
                    }
                    ScrollView(.horizontal, showsIndicators: false) {
                        HStack {
-                               ForEach(0..<5) {_ in
+                          
                    
                                BrunchView()
-                               }
+                               
                            }
                        }
                    }.padding()
@@ -74,10 +75,10 @@ struct Home: View {
                    ScrollView(.horizontal, showsIndicators: false) {
                        HStack {
                                        
-                           ForEach(0..<5) {_ in
+                           //ForEach(0..<5) {_ in
                                   
                                LunchView()
-                               }
+                           //    }
                            }
                        }
                    }.padding()
@@ -88,17 +89,17 @@ struct Home: View {
                        HStack {
                            DinnerTitle()
                            Spacer()
-                           NavigationLink(destination: SeeAllDinner()) {
+                           NavigationLink(destination: SeeAllBreakfast()) {
                                Text("See all").foregroundColor(universalOrange)
                            }
                        }
                    ScrollView(.horizontal, showsIndicators: false) {
                        HStack {
-                                          
-                           ForEach(0..<5) {_ in
+                        
+                         //  ForEach(0..<5) {_ in
                                   
                                DinnerView()
-                               }
+                             //  }
                            }
                        }
                         Divider()
@@ -117,10 +118,10 @@ struct Home: View {
                    ScrollView(.horizontal, showsIndicators: false) {
                        HStack {
                                                        
-                           ForEach(0..<5) {_ in
+                          // ForEach(0..<5) {_ in
                                                  
                                SnackView()
-                               }
+                              // }
                            }
                        }
                        Divider()
@@ -139,10 +140,10 @@ struct Home: View {
                    ScrollView(.horizontal, showsIndicators: false) {
                        HStack {
                                                          
-                           ForEach(0..<5) {_ in
+                         //  ForEach(0..<5) {_ in
                                            
                                DesertView()
-                               }
+                           //    }
                            }
                        }
                         Divider()
@@ -160,9 +161,9 @@ struct Home: View {
                        }
                    ScrollView(.horizontal, showsIndicators: false) {
                        HStack {
-                           ForEach(0..<5) {_ in
+                          // ForEach(0..<5) {_ in
                                DrinkView()
-                           }
+                           //}
                                }
                            }
                         Divider()
@@ -244,6 +245,8 @@ struct ModalView: View {
        @State var imagepicker = false
        @State var source: UIImagePickerController.SourceType = .photoLibrary
     
+//    @Binding var showPost : Bool
+//    @State var txt : String
     var body: some View {
         ZStack {
             LinearGradient(gradient: .init(colors: [Color("RentErm2"), Color("RentErm1")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
@@ -299,10 +302,14 @@ struct ModalView: View {
                     Text("Description")
                     TextField("Enter the name of this food", text: $description)
                 }.padding(.leading, 15)
+                
                 HStack {
                     Text("Ingredients")
+                    //multilineTextField(txt: $ingredients)
                     TextField("Enter the ingredients for this meal", text: $ingredients)
                 }.padding(.leading, 15)
+                
+                
                  //  ZStack {
                 HStack {
                   
@@ -352,6 +359,54 @@ struct ModalView: View {
     }
 }
 
+//struct multilineTextField : UIViewRepresentable {
+//    @Binding var showPost : Bool
+//    @State var txt : String
+//
+//    func makeCoordinator() -> multilineTextField.Coordinator {
+//
+//        return multilineTextField.Coordinator(parent1: self)
+//    }
+//
+//    func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<multilineTextField>) {
+//
+//    }
+//
+//
+//    func makeUIView(context: UIViewRepresentableContext<multilineTextField>) -> UITextView {
+//
+//        let text = UITextView()
+//        text.isEditable = true
+//        text.isUserInteractionEnabled = true
+//        text.text = "Type Ingredients"
+//        text.textColor = .gray
+//        text.font = .systemFont(ofSize: 20)
+//        text.delegate = context.coordinator
+//            return text
+//        }
+//
+//    class Coordinator : NSObject, UITextViewDelegate {
+//
+//        var parent : multilineTextField
+//
+//        init(parent1: multilineTextField) {
+//
+//            parent = parent1
+//        }
+//        func textViewDidBeginEditing(_ textView: UITextView) {
+//            textView.text = ""
+//            textView.textColor = .black
+//        }
+//
+//        func textViewDidChange(_ textView: UITextView) {
+//            self.parent.txt = textView.text
+//        }
+//    }
+//    }
+
+
+
+
 
 struct Imagepicker: UIViewControllerRepresentable {
  
@@ -399,3 +454,81 @@ struct Imagepicker: UIViewControllerRepresentable {
  }
 }
 
+
+struct MealPost: Identifiable {
+    var id: String = ""
+    var mealDetails: String = ""
+    var ingredients: String = ""
+    var flames: String = ""
+    var pic: String = ""
+    var url: String = ""
+    var tagId: String = ""
+    
+    init(id: String, desc: String, url:String, ingre: String) {
+        self.id = id
+        self.mealDetails = desc
+        self.url = url
+        self.ingredients = ingre
+    }
+    
+    init() {
+    }
+}
+
+class DataManager : ObservableObject {
+    
+    @Published var meals = [MealPost]()
+    
+    init() {
+        
+        self.meals.append(MealPost(id: "Alice", desc: "Big Mac", url: "brunch", ingre: "This contains everything on a big mac plus cheese!"))
+        self.meals.append(MealPost(id: "Tom", desc: "Mac & Cheese", url: "lunch", ingre: "This contains everything needed to make mac & cheese!"))
+        self.meals.append(MealPost(id: "Bob", desc: "Fried Chicken", url: "dinner", ingre: "This contains everything needed for fried chicken!"))
+        self.meals.append(MealPost(id: "John", desc: "Watermelon", url: "snack", ingre: "Watermelon with some sugar!"))
+        self.meals.append(MealPost(id: "Smith", desc: "Crab Legs", url: "drink", ingre: "Crab legs butter and ole bay!! Can't go wrong!"))
+        
+        
+        let db = Firestore.firestore()
+     
+         
+        db.collection("breakfastPost").addSnapshotListener {(snap, err) in
+            
+            if err != nil {
+                print((err?.localizedDescription)!)
+                return
+            }
+            
+            print(snap)
+            
+            self.meals.removeAll()
+            
+            for item in snap!.documentChanges {
+                
+                if item.type == .added {
+                    
+                    var mealItem = MealPost()
+                    mealItem.id = item.document.documentID
+                    mealItem.mealDetails = item.document.get("description") as! String
+                    mealItem.ingredients = item.document.get("ingredients") as! String
+                    mealItem.flames = item.document.get("flames") as! String
+                    mealItem.pic = item.document.get("pic") as! String
+                    //let tagID = i.document.get("id") as! String
+                    
+                    self.meals.append(mealItem)
+                    
+                    
+                    /*
+                    DispatchQueue.main.async {
+                        
+                        self.meals.append(MealPost(id: id, description: description, ingredients: ingredients, flames: flames, pic: pic, tagId: tagID))
+                    }
+ */
+                }
+            }
+            
+            
+            
+        }
+        
+    }
+}

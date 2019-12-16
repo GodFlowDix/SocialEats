@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct DescriptionText: View {
+    var textToDisplay:String
  var body: some View {
-     Text("Description of food")
+    Text(textToDisplay)
          .font(.headline)
          .fontWeight(.semibold)
          .multilineTextAlignment(.leading)
@@ -21,6 +22,6 @@ struct DescriptionText: View {
 
 struct DescriptionText_Previews: PreviewProvider {
     static var previews: some View {
-        DescriptionText()
+        DescriptionText(textToDisplay: "Description Example !!!")
     }
 }

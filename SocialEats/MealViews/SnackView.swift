@@ -9,14 +9,18 @@
 import SwiftUI
 
  struct SnackView: View {
+    @State var data = DataManager()
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
 
-                ForEach(0..<5) {_ in
-
-                    SnackCard(profilePic: "profilePicture", imName: "snack")
+                ForEach(data.meals){ meal in
+                    SnackCard(mealToDisplay: meal)
                 }
+//                ForEach(0..<5) {_ in
+//
+//                    SnackCard(profilePic: "profilePicture", imName: "snack")
+//                }
             }
         }
     }
@@ -30,6 +34,8 @@ struct SnackView_Previews: PreviewProvider {
 
 
 struct SnackCard: View {
+    var mealToDisplay: MealPost
+
    var profilePic = ""
    var imName = ""
    var body: some View {
@@ -37,11 +43,11 @@ struct SnackCard: View {
         VStack {
                   HStack(alignment: .top) {
                   Image(profilePic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
-                     UsernameText()
+                    UsernameText(textToDisplay: mealToDisplay.id)
                      Spacer()
-                     DescriptionText()
+                    DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                   }
-                  Image(imName).resizable().frame(width: 320, height: 215).cornerRadius(11)
+                  Image(mealToDisplay.url).resizable().frame(width: 320, height: 215).cornerRadius(11)
                   
                   HStack {
                       FireButton()
@@ -50,7 +56,7 @@ struct SnackCard: View {
                   }
                   
                   HStack {
-                      IngredientsText().padding(.leading, 6.0)
+                    IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
                       Spacer()
                   }
               }
@@ -59,6 +65,8 @@ struct SnackCard: View {
   }
 
 struct BigSnackCard: View {
+        var mealToDisplay: MealPost
+
         var profilePic = ""
         var imName = ""
         var id = ""
@@ -67,12 +75,12 @@ struct BigSnackCard: View {
             VStack {
                    HStack {
                    Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
-                       UsernameText()
+                    UsernameText(textToDisplay: mealToDisplay.id)
                        Spacer()
-                       DescriptionText()
+                    DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                    }
                        .padding(.leading, 9.0)
-                       Image(imName).resizable().frame(height: 375).cornerRadius(3)
+                       Image(mealToDisplay.url).resizable().frame(height: 375).cornerRadius(3)
                        
                    HStack {
                        FireButton()
@@ -80,7 +88,7 @@ struct BigSnackCard: View {
                        Spacer()
                    }
                    HStack {
-                       IngredientsText() .padding(.leading, 6.0)
+                    IngredientsText(textToDisplay: mealToDisplay.ingredients) .padding(.leading, 6.0)
                        Spacer()
                        }.padding(.bottom, 30)
                    }
@@ -89,14 +97,18 @@ struct BigSnackCard: View {
     }
   
   struct BigSnackView: View {
+    @State var data = DataManager()
               var body: some View {
               
                   ScrollView(.vertical, showsIndicators: false) {
                      
 
-                          ForEach(0..<5) {_ in
-                           BigSnackCard(profilePic: "profilePicture", imName: "snack", id: "")
-                       }
+                    ForEach(data.meals){ meal in
+                        BigSnackCard(mealToDisplay: meal)
+                    }
+//                          ForEach(0..<5) {_ in
+//                           BigSnackCard(profilePic: "profilePicture", imName: "snack", id: "")
+//                       }
                   }
               }
           }
@@ -104,6 +116,7 @@ struct BigSnackCard: View {
 
 
 struct SeeAllSnack: View {
+    @State var data = DataManager()
             @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
                var btnBack : some View { Button(action: {
@@ -126,12 +139,7 @@ struct SeeAllSnack: View {
                      ScrollView(.vertical, showsIndicators: false) {
                         
                         VStack {
-                            
-                            ForEach(0..<5) {_ in
-                                        
                             BigSnackView()
-                            }
-                            
                         }
                     }
                 }.navigationBarTitle("All Snack Posts")

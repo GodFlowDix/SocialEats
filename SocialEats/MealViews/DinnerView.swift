@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct DinnerView: View {
+    @State var data = DataManager()
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
 
-                ForEach(0..<5) {_ in
-
-                    DinnerCard(profilePic: "profilePicture", imName: "dinner")                }
+                ForEach(data.meals){ meal in
+                    DinnerCard(mealToDisplay: meal)
             }
         }
     }
@@ -33,6 +33,8 @@ struct DinnerView_Previews: PreviewProvider {
 
 
 struct DinnerCard: View {
+ var mealToDisplay: MealPost
+
  var profilePic = ""
  var imName = ""
  var body: some View {
@@ -40,11 +42,11 @@ struct DinnerCard: View {
      VStack {
                 HStack(alignment: .top) {
                 Image(profilePic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
-                   UsernameText()
+                    UsernameText(textToDisplay: mealToDisplay.id)
                    Spacer()
-                   DescriptionText()
+                    DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                 }
-                Image(imName).resizable().frame(width: 320, height: 215).cornerRadius(11)
+                Image(mealToDisplay.url).resizable().frame(width: 320, height: 215).cornerRadius(11)
                 
                 HStack {
                     FireButton()
@@ -53,7 +55,7 @@ struct DinnerCard: View {
                 }
                 
                 HStack {
-                    IngredientsText().padding(.leading, 6.0)
+                    IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
                     Spacer()
                 }
             }
@@ -64,6 +66,8 @@ struct DinnerCard: View {
 
 
 struct BigDinnerCard: View {
+    var mealToDisplay: MealPost
+
     var profilePic = ""
     var imName = ""
     var id = ""
@@ -72,12 +76,12 @@ struct BigDinnerCard: View {
              VStack {
              HStack {
              Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
-                 UsernameText()
+                UsernameText(textToDisplay: mealToDisplay.id)
                  Spacer()
-                 DescriptionText()
+                DescriptionText(textToDisplay: mealToDisplay.mealDetails)
              }
                  .padding(.leading, 9.0)
-                 Image(imName).resizable().frame(height: 375).cornerRadius(3)
+                 Image(mealToDisplay.url).resizable().frame(height: 375).cornerRadius(3)
                       
              HStack {
                  FireButton()
@@ -85,7 +89,7 @@ struct BigDinnerCard: View {
                  Spacer()
              }
              HStack {
-                 IngredientsText() .padding(.leading, 6.0)
+                IngredientsText(textToDisplay: mealToDisplay.ingredients) .padding(.leading, 6.0)
                  Spacer()
                  }.padding(.bottom, 30)
              }
@@ -94,16 +98,14 @@ struct BigDinnerCard: View {
 }
 
 struct BigDinnerView: View {
+    @State var data = DataManager()
           var body: some View {
           
               ScrollView(.vertical, showsIndicators: false) {
                  
-
-                      ForEach(0..<5) {_ in
-                       BigDinnerCard(profilePic: "profilePicture", imName: "dinner", id: "")
-                      
-                      
-                   }
+                ForEach(data.meals){ meal in
+                            BigDinnerCard(mealToDisplay: meal)
+                 }
               }
           }
       }
@@ -114,6 +116,7 @@ struct BigDinnerView: View {
 
 
 struct SeeAllDinner: View {
+    
           @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
              var btnBack : some View { Button(action: {
@@ -136,12 +139,7 @@ struct SeeAllDinner: View {
                    ScrollView(.vertical, showsIndicators: false) {
                       
                       VStack {
-                          
-                          ForEach(0..<5) {_ in
-                                      
                           BigDinnerView()
-                          }
-                          
                       }
                   }
               }.navigationBarTitle("All Dinner Posts")
@@ -149,3 +147,4 @@ struct SeeAllDinner: View {
                .navigationBarItems(leading: btnBack)
           }
       }
+}

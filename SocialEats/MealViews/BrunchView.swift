@@ -9,13 +9,12 @@
 import SwiftUI
 
 struct BrunchView: View {
+    @State var data = DataManager()
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-
-                ForEach(0..<5) {_ in
-                    
-                    BrunchCard(profilePic: "profilePicture", imName: "brunch")
+                ForEach(data.meals){ meal in
+                    BrunchCard(mealToDisplay: meal)
                 }
             }
         }
@@ -29,23 +28,23 @@ struct BrunchView_Previews: PreviewProvider {
 }
 
 struct BrunchCard: View {
+   var mealToDisplay: MealPost
    var profilePic = ""
    var imName = ""
    var body: some View {
 
        VStack {
            HStack(alignment: .top) {
-               Image(profilePic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
+              
+            Image(profilePic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
                           //Spacer()
-               Text("Username")
-               .font(.body)
-               .fontWeight(.thin)
-               .foregroundColor(Color("universalOrange"))
+            UsernameText(textToDisplay: mealToDisplay.id)
+             
                           Spacer()
-               DescriptionText()
+            DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                       }
            
-           Image(imName).resizable().frame(width: 320, height: 215).cornerRadius(11)
+           Image(mealToDisplay.url).resizable().frame(width: 320, height: 215).cornerRadius(11)
           
            HStack {
                          FireButton()
@@ -54,7 +53,7 @@ struct BrunchCard: View {
                      }
                      
                      HStack {
-                         IngredientsText().padding(.leading, 6.0)
+                        IngredientsText(textToDisplay: mealToDisplay.ingredients).padding(.leading, 6.0)
                          Spacer()
                      }
            }
@@ -63,21 +62,27 @@ struct BrunchCard: View {
   }
 
 struct BigBrunchView: View {
+    @State var data = DataManager()
         var body: some View {
         
             ScrollView(.vertical, showsIndicators: false) {
                
 
-                    ForEach(0..<5) {_ in
-                     BigBrunchCard(profilePic: "profilePicture", imName: "brunch", id: "")
-                    
-                    
-                 }
+                ForEach(data.meals){ meal in
+                            BigBrunchCard(mealToDisplay: meal)
+                    }
+//                    ForEach(0..<5) {_ in
+//                     BigBrunchCard(profilePic: "profilePicture", imName: "brunch", id: "")
+//
+//
+//                 }
             }
         }
     }
 
 struct BigBrunchCard: View {
+    var mealToDisplay: MealPost
+
       var profilePic = ""
       var imName = ""
       var id = ""
@@ -86,12 +91,12 @@ struct BigBrunchCard: View {
           VStack {
                     HStack {
                Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
-                      UsernameText()
+                        UsernameText(textToDisplay: mealToDisplay.id)
                         Spacer()
-                       DescriptionText()
+                        DescriptionText(textToDisplay: mealToDisplay.mealDetails)
                     }
                     .padding(.leading, 9.0)
-                  Image(imName).resizable().frame(height: 375).cornerRadius(3)
+                  Image(mealToDisplay.url).resizable().frame(height: 375).cornerRadius(3)
               
               HStack {
                   FireButton()
@@ -99,7 +104,7 @@ struct BigBrunchCard: View {
                   Spacer()
                   }
               HStack {
-              IngredientsText() .padding(.leading, 6.0)
+                IngredientsText(textToDisplay: mealToDisplay.ingredients) .padding(.leading, 6.0)
                Spacer()
               }.padding(.bottom, 30)
               }
@@ -132,12 +137,7 @@ struct SeeAllBrunch: View {
               ScrollView(.vertical, showsIndicators: false) {
                  
                  VStack {
-                     
-                     ForEach(0..<5) {_ in
-                                 
                      BigBrunchView()
-                     }
-                     
                  }
              }
          }.navigationBarTitle("All Brunch Posts")
