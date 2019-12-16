@@ -71,7 +71,7 @@ struct BreakfastCard: View {
         ZStack {
         VStack {
                   HStack {
-             Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
+             Image(mealToDisplay.pic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
                     UsernameText(textToDisplay: mealToDisplay.id)
                       Spacer()
                     DescriptionText(textToDisplay: mealToDisplay.mealDetails)

@@ -42,7 +42,7 @@ struct SnackCard: View {
 
         VStack {
                   HStack(alignment: .top) {
-                  Image(profilePic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
+                  Image(mealToDisplay.pic).resizable().clipShape(Circle()).frame(width: 30, height: 30)
                     UsernameText(textToDisplay: mealToDisplay.id)
                      Spacer()
                     DescriptionText(textToDisplay: mealToDisplay.mealDetails)
@@ -74,7 +74,7 @@ struct BigSnackCard: View {
             ZStack {
             VStack {
                    HStack {
-                   Image(profilePic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
+                   Image(mealToDisplay.pic).resizable().clipShape(Circle()).frame(width: 40, height: 40)
                     UsernameText(textToDisplay: mealToDisplay.id)
                        Spacer()
                     DescriptionText(textToDisplay: mealToDisplay.mealDetails)

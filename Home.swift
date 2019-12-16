@@ -464,11 +464,12 @@ struct MealPost: Identifiable {
     var url: String = ""
     var tagId: String = ""
     
-    init(id: String, desc: String, url:String, ingre: String) {
+    init(id: String, desc: String, url:String, ingre: String, proPic: String) {
         self.id = id
         self.mealDetails = desc
         self.url = url
         self.ingredients = ingre
+        self.pic = proPic
     }
     
     init() {
@@ -481,11 +482,11 @@ class DataManager : ObservableObject {
     
     init() {
         
-        self.meals.append(MealPost(id: "Alice", desc: "Big Mac", url: "brunch", ingre: "This contains everything on a big mac plus cheese!"))
-        self.meals.append(MealPost(id: "Tom", desc: "Mac & Cheese", url: "lunch", ingre: "This contains everything needed to make mac & cheese!"))
-        self.meals.append(MealPost(id: "Bob", desc: "Fried Chicken", url: "dinner", ingre: "This contains everything needed for fried chicken!"))
-        self.meals.append(MealPost(id: "John", desc: "Watermelon", url: "snack", ingre: "Watermelon with some sugar!"))
-        self.meals.append(MealPost(id: "Smith", desc: "Crab Legs", url: "drink", ingre: "Crab legs butter and ole bay!! Can't go wrong!"))
+        self.meals.append(MealPost(id: "Alice", desc: "Big Mac", url: "brunch", ingre: "This contains everything on a big mac plus cheese!", proPic: "profilePicture"))
+        self.meals.append(MealPost(id: "Tom", desc: "Mac & Cheese", url: "lunch", ingre: "This contains everything needed to make mac & cheese!", proPic: "mike"))
+        self.meals.append(MealPost(id: "Bob", desc: "Fried Chicken", url: "dinner", ingre: "This contains everything needed for fried chicken!", proPic: "tae"))
+        self.meals.append(MealPost(id: "John", desc: "Watermelon", url: "snack", ingre: "Watermelon with some sugar!", proPic: "renan"))
+        self.meals.append(MealPost(id: "Smith", desc: "Crab Legs", url: "drink", ingre: "Crab legs butter and ole bay!! Can't go wrong!", proPic: "darius"))
         
         
         let db = Firestore.firestore()
